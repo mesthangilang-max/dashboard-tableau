@@ -3,32 +3,139 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dashboard Tableau — GitHub Pages</title>
+  <title>Dashboard Tableau — Statistik Wisatawan</title>
   <style>
-    html, body { height: 100%; margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
-    header { padding: 16px; text-align: center; }
-    .wrapper { max-width: 1200px; margin: 0 auto; padding: 0 16px 24px; }
-    .embed-container { position: relative; width: 100%; aspect-ratio: 16 / 9; background: #f5f5f5; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
-    .embed-container iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-    .tip { font-size: 14px; color: #444; margin-top: 12px; }
-    footer { text-align: center; font-size: 12px; color: #777; padding: 24px 0; }
-    @media (max-width: 640px) { .embed-container { aspect-ratio: 9 / 16; } }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+      background: #f4f6f9;
+      color: #333;
+      line-height: 1.6;
+      overflow-x: hidden; /* cegah scroll horizontal */
+    }
+
+    /* Header hijau */
+    header {
+      background: linear-gradient(135deg, #2e7d32, #1b5e20);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    header h1 { font-size: 2rem; margin-bottom: 10px; }
+    header p { font-size: 1.1rem; opacity: 0.9; }
+
+    main {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    .dashboard-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      margin-bottom: 40px;
+      overflow: hidden;
+    }
+
+    .dashboard-header {
+      background: #1b5e20;
+      color: white;
+      padding: 16px;
+      font-weight: bold;
+    }
+
+    .dashboard-content {
+      padding: 0;
+    }
+
+    /* Container Tableau responsif */
+    .tableau-container {
+      position: relative;
+      width: 100%;      /* penuh sesuai parent */
+      aspect-ratio: 16/9; /* default rasio untuk desktop */
+    }
+    .tableau-container object {
+      position: absolute;
+      inset: 0;
+      width: 100%;   /* isi penuh container */
+      height: 100%;
+      border: 0;
+    }
+
+    /* Atur tinggi untuk HP agar lebih enak */
+    @media (max-width: 768px) {
+      .tableau-container {
+        aspect-ratio: 9/16; /* portrait */
+      }
+    }
+
+    footer {
+      background: #2e7d32;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.85rem;
+      margin-top: 40px;
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>Dashboard Tableau</h1>
-    <p>Contoh halaman statis untuk memuat dashboard Tableau Public melalui <code>&lt;iframe&gt;</code>.</p>
+    <p>Analisis Statistik Wisatawan Mancanegara</p>
   </header>
 
-  <main class="wrapper">
-   
-<div class='tableauPlaceholder' id='viz1755143350962' style='position: relative'><noscript><a href='#'><img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Wi&#47;WisatawanMancanegara&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='WisatawanMancanegara&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Wi&#47;WisatawanMancanegara&#47;Dashboard1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1755143350962');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1200px';vizElement.style.height='827px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1200px';vizElement.style.height='827px';} else { vizElement.style.width='100%';vizElement.style.height='1727px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
-    <p class="tip">
-      Catatan: Pastikan URL <strong>https</strong> (bukan http) agar tidak terjadi mixed-content error.
-    </p>
+  <main>
+    <!-- Dashboard 1 -->
+    <div class="dashboard-card">
+      <div class="dashboard-header">Dashboard 1</div>
+      <div class="dashboard-content">
+        <div class="tableau-container" id="viz1">
+          <object class="tableauViz"></object>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dashboard 2 -->
+    <div class="dashboard-card">
+      <div class="dashboard-header">Dashboard 2</div>
+      <div class="dashboard-content">
+        <div class="tableau-container" id="viz2">
+          <object class="tableauViz"></object>
+        </div>
+      </div>
+    </div>
   </main>
 
-  <footer>Hosting oleh GitHub Pages • Template oleh ChatGPT</footer>
+  <footer>
+    &copy; 2025 Statistik Wisatawan • Hosting via GitHub Pages
+  </footer>
+
+  <script type="text/javascript">
+    function initViz(id, dashboardPath) {
+      var divElement = document.getElementById(id);
+      var vizElement = divElement.getElementsByTagName('object')[0];
+      vizElement.innerHTML = `
+        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F'/> 
+        <param name='embed_code_version' value='3'/> 
+        <param name='site_root' value=''/>
+        <param name='name' value='${dashboardPath}'/>
+        <param name='tabs' value='no'/>
+        <param name='toolbar' value='yes'/>
+        <param name='animate_transition' value='yes'/>
+        <param name='display_spinner' value='yes'/>
+        <param name='display_overlay' value='yes'/>
+        <param name='display_count' value='yes'/>
+        <param name='language' value='en-US'/>`;
+
+      var scriptElement = document.createElement('script');
+      scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+      vizElement.parentNode.insertBefore(scriptElement, vizElement);
+    }
+
+    initViz('viz1', 'WisatawanMancanegara/Dashboard1');
+    initViz('viz2', 'WisatawanMancanegara/Dashboard1');
+  </script>
 </body>
 </html>

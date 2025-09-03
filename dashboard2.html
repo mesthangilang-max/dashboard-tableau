@@ -132,7 +132,30 @@
   border-top-left-radius: 12px;   /* sudut kiri atas lebih round */
   border-top-right-radius: 12px;  /* sudut kanan atas lebih round */
 }
-
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0 10px;
+      }
+      .logo {width: 50px;}
+      .title h1 {font-size: 20px;}
+      .title p {font-size: 13px;}
+      .navbar ul {flex-direction: column; gap: 6px; width: 100%;}
+      .navbar a {
+        display: block;
+        width: 100%;
+        padding: 8px;
+        text-align: left;
+      }
+      main {padding: 20px 10px;}
+      .dashboard-content {padding: 10px;}
+    }
+    @media (max-width: 480px) {
+      .title h1 {font-size: 18px;}
+      .title p {font-size: 12px;}
+      .navbar a {font-size: 13px; padding: 6px 8px;}
+    }
   </style>
 </head>
 <body>
@@ -202,4 +225,5 @@ if (window.innerWidth < 768) {
     &copy; 2025 Kementerian Agama Kota Yogyakarta • Hosting via GitHub Pages
   </footer>
 </body>
+
 </html>

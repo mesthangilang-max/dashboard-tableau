@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Dashboard Pernikahan</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      font-family: 'Segoe UI', Roboto, Roboto, sans-serif;
+      background: #f4f6f9;
+      color: #333;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    header {
+       position: relative;
+      overflow: hidden;
+      background: linear-gradient(270deg, #2e7d32, #1b5e20, #388e3c);
+      background-size: 600% 600%;
+      animation: gradientAnimation 12s ease infinite;
+      color: white;
+      padding: 60px 40px;
+    }
+    .wave {
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 100%;
+      height: auto;
+    }
+
+    @keyframes gradientAnimation {
+      0%{background-position:0% 50%;}
+      50%{background-position:100% 50%;}
+      100%{background-position:0% 50%;}
+    }
+    header::before, header::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      z-index: 0;
+      animation: move 20s linear infinite;
+    }
+
+    header::before {
+      width: 220px; height: 220px;
+      top: -60px; left: -60px;
+    }
+
+    header::after {
+      width: 320px; height: 320px;
+      bottom: -120px; right: -120px;
+    }
+
+    @keyframes move {
+      0%   { transform: translate(0,0) rotate(0deg); }
+      50%  { transform: translate(60px,40px) rotate(180deg); }
+      100% { transform: translate(0,0) rotate(360deg); }
+    }
+
+    .header-container{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;width:100%;padding:0 40px;}
+    .logo-title{display:flex;align-items:center;gap:15px;}
+    .logo{width:65px;}
+    .title h1{margin:0;font-size:26px;}
+    .title p{margin:0;font-size:15px;opacity:0.9;}
+    .navbar ul{list-style:none;margin:0;padding:0;display:flex;gap:10px;}
+    .navbar li{display:inline-block;}
+    .navbar a{
+      padding:6px 12px;
+      font-size:14px;
+      border-radius:5px;
+      color:white;
+      text-decoration:none;
+      transition:background 0.3s,transform 0.2s;
+    }
+    .navbar a:hover{background:rgba(255,255,255,0.2);transform:scale(1.05);}
+    .navbar a.active{background:#66bb6a;font-weight:bold;}
+
+
+    /* Halaman utama dengan background foto */
+    main {
+      max-width: 100%;
+      padding: 30px 20px;
+      background: 
+        linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)),
+        url("https://yogyakartakota.kemenag.go.id/wp-content/uploads/2024/09/Foto-Kantor-Kementerian-Agama-Kota-Yogyakarta-WM.jpeg")
+        center/cover fixed no-repeat;
+    }
+
+    .content-wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .dashboard-card {
+      background: rgba(255,255,255,0.95);
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      margin-bottom: 40px;
+      overflow: hidden;
+      backdrop-filter: blur(3px);
+    }
+
+    .dashboard-header {
+      background: #1b5e20;
+      color: white;
+      padding: 16px;
+      font-weight: bold;
+    }
+
+    .dashboard-content {
+      padding: 20px;
+    }
+
+    footer {
+      background: #2e7d32;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.85rem;
+      margin-top: 40px;
+    }
+
+.dashboard-header {
+  background: #1b5e20;
+  color: white;
+  padding: 16px;
+  font-weight: bold;
+  border-top-left-radius: 12px;   /* sudut kiri atas lebih round */
+  border-top-right-radius: 12px;  /* sudut kanan atas lebih round */
+}
+
+  </style>
+</head>
+<body>
+<header>
+  <div class="header-container">
+    <div class="logo-title">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Kementerian_Agama_new_logo.png" class="logo">
+      <div class="title">
+        <h1>Dashboard Data Keagamaan</h1>
+        <p>Kantor Kementerian Agama Kota Yogyakarta</p>
+      </div>
+    </div>
+    <nav class="navbar">
+      <ul>
+        <li><a href="index.html">Pemeluk Agama</a></li>
+        <li><a href="dashboard2.html">Madrasah</a></li>
+        <li><a href="dashboard3.html" class="active">Pernikahan</a></li>
+        <li><a href="dashboard4.html">Pondok Pesantren</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="content-wrapper">
+<!-- Dashboard Pernikahan -->
+<div class="dashboard-card">
+  <div class="dashboard-header">Dashboard 3 Pernikahan</div>
+  <div class="dashboard-content">
+    <!-- Embed code dashboard 3 -->
+    <div class='tableauPlaceholder' id='viz1755672134405' style='position: relative; width:100%;'>
+      <noscript><a href='#'><img alt='Dashboard 3' src='https://public.tableau.com/static/images/pe/pernikahankota_KGP_250820/Dashboard1/1_rss.png' style='border:none;width:100%;' /></a></noscript>
+      <object class='tableauViz' style='display:none; width:100%;'>
+        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+        <param name='embed_code_version' value='3' />
+        <param name='site_root' value='' />
+        <param name='name' value='pernikahankota_KGP_250820/Dashboard1' />
+        <param name='tabs' value='no' />
+        <param name='toolbar' value='yes' />
+        <param name='language' value='en-US' />
+      </object>
+    </div>
+    <script type='text/javascript'>
+      var divElement = document.getElementById('viz1755672134405');
+      var vizElement = divElement.getElementsByTagName('object')[0];
+      vizElement.style.width = "100%";  
+      vizElement.style.height = (divElement.offsetWidth * 0.48) + "px";  
+      // ✅ 0.48 karena ukuran asli Tableau ≈ 1020 x 487 (rasio tinggi ~48%)
+      var scriptElement = document.createElement('script');
+      scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+      vizElement.parentNode.insertBefore(scriptElement, vizElement);
+    </script>
+  </div>
+</div>
+
+
+  </div>
+</main>
+
+  <footer>
+    &copy; 2025 Kementerian Agama Kota Yogyakarta • Hosting via GitHub Pages
+  </footer>
+</body>
+</html>

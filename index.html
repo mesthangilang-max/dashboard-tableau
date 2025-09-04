@@ -4,7 +4,8 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Dashboard Pemeluk Agama</title>
-  <link rel="icon" type="image/png" href="https://man2kulonprogo.sch.id/m2kp/wp-content/uploads/2021/03/Logo-Kementerian-Agama-Kemenag-Indonesia-PNG-2160p-FileVector69.png">
+<link rel="icon" type="image/png" href="https://man2kulonprogo.sch.id/m2kp/wp-content/uploads/2021/03/Logo-Kementerian-Agama-Kemenag-Indonesia-PNG-2160p-FileVector69.png">
+
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html, body {
@@ -16,7 +17,7 @@
     }
 
     header {
-       position: relative;
+      position: relative;
       overflow: hidden;
       background: linear-gradient(270deg, #2e7d32, #1b5e20, #388e3c);
       background-size: 600% 600%;
@@ -63,15 +64,15 @@
     }
 
     .header-container{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;width:100%;padding:0 40px;}
-    .logo-title{display:flex;align-items:center;gap:2px;}
+    .logo-title{display:flex;align-items:center;gap:15px;}
     .logo{width:65px;}
     .title h1{margin:0;font-size:26px;}
     .title p{margin:0;font-size:15px;opacity:0.9;}
-    .navbar ul{list-style:none;margin:0;padding:0;display:flex;gap:10px;}
+    .navbar ul{list-style:none;margin:0;padding:0;display:flex;gap:8px;}
     .navbar li{display:inline-block;}
     .navbar a{
       padding:6px 12px;
-      font-size:14px;
+      font-size:15px;
       border-radius:5px;
       color:white;
       text-decoration:none;
@@ -176,6 +177,16 @@ footer {
   opacity: 0.8;
 }
 
+/* Responsif */
+@media (max-width: 768px) {
+  .footer-top {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .footer-left {flex-direction: column; align-items: center; text-align: center;}
+  .footer-right ul {text-align: center;}
+}
+
 
 .dashboard-header {
   background: #1b5e20;
@@ -229,6 +240,7 @@ footer {
         <li><a href="dashboard2.html">Madrasah</a></li>
         <li><a href="dashboard3.html">Pernikahan</a></li>
         <li><a href="dashboard4.html">Pondok Pesantren</a></li>
+        <li><a href="dashboard5.html">TPQ</a></li>
       </ul>
     </nav>
   </div>
@@ -262,12 +274,13 @@ if (window.innerWidth < 768) {
   vizElement.style.height = '600px';
 } else {
   // untuk layar besar
-  vizElement.style.height = (divElement.offsetWidth * 0.5) + 'px';
+  vizElement.style.height = (divElement.offsetWidth * 0.48) + 'px';
 }
           var scriptElement = document.createElement('script');
           scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
           vizElement.parentNode.insertBefore(scriptElement, vizElement);
         </script>
+<a>Data Seksi Bimbingan Masyarakat Islam Tahun 2024</a>
       </div>
     </div>
 
@@ -298,10 +311,6 @@ if (window.innerWidth < 768) {
     &copy; 2025 Kementerian Agama Kota Yogyakarta • Hosting via GitHub
   </div>
 </footer>
+
 </body>
 </html>
-
-
-
-
-

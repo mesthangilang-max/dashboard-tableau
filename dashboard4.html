@@ -4,6 +4,7 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Dashboard Pondok Pesantren</title>
+<link rel="icon" type="image/png" href="https://man2kulonprogo.sch.id/m2kp/wp-content/uploads/2021/03/Logo-Kementerian-Agama-Kemenag-Indonesia-PNG-2160p-FileVector69.png">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html, body {
@@ -66,11 +67,11 @@
     .logo{width:65px;}
     .title h1{margin:0;font-size:26px;}
     .title p{margin:0;font-size:15px;opacity:0.9;}
-    .navbar ul{list-style:none;margin:0;padding:0;display:flex;gap:10px;}
+    .navbar ul{list-style:none;margin:0;padding:0;display:flex;gap:8px;}
     .navbar li{display:inline-block;}
     .navbar a{
       padding:6px 12px;
-      font-size:14px;
+      font-size:15px;
       border-radius:5px;
       color:white;
       text-decoration:none;
@@ -115,14 +116,76 @@
       padding: 20px;
     }
 
-    footer {
-      background: #2e7d32;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.85rem;
-      margin-top: 40px;
-    }
+footer {
+  background: #1b5e20;
+  color: white;
+  padding: 30px 20px 10px;
+  margin-top: 40px;
+  font-size: 14px;
+}
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  margin-left: 70px;
+  
+}
+.footer-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  max-width: 600px;
+  margin: 0;
+}
+
+.footer-info h3 {
+  margin: 20;
+  font-size: 18px;
+  font-weight: 600;
+}
+.footer-info p {
+  margin: 2px 0;
+  font-size: 13px;
+  opacity: 0.9;
+}
+.footer-right ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display:flex;
+  gap:20px;
+  margin-right: 70px;
+}
+.footer-right li {
+  margin: 6px 0; display:inline-block;
+}
+.footer-right a {
+  color: white;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+.footer-right a:hover {
+  opacity: 0.7;
+}
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.3);
+  padding-top: 8px;
+  text-align: center;
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  .footer-top {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .footer-left {flex-direction: column; align-items: center; text-align: center;}
+  .footer-right ul {text-align: center;}
+}
+
 
 .dashboard-header {
   background: #1b5e20;
@@ -132,6 +195,7 @@
   border-top-left-radius: 12px;   /* sudut kiri atas lebih round */
   border-top-right-radius: 12px;  /* sudut kanan atas lebih round */
 }
+
     @media (max-width: 768px) {
       .header-container {
         flex-direction: column;
@@ -156,6 +220,7 @@
       .title p {font-size: 12px;}
       .navbar a {font-size: 13px; padding: 6px 8px;}
     }
+
   </style>
 </head>
 <body>
@@ -174,6 +239,7 @@
         <li><a href="dashboard2.html">Madrasah</a></li>
         <li><a href="dashboard3.html">Pernikahan</a></li>
         <li><a href="dashboard4.html" class="active">Pondok Pesantren</a></li>
+        <li><a href="dashboard5.html">TPQ</a></li>
       </ul>
     </nav>
   </div>
@@ -211,25 +277,47 @@
       var divElement = document.getElementById('viz1756269959344');
       var vizElement = divElement.getElementsByTagName('object')[0];
       if (divElement.offsetWidth > 800) { 
-        vizElement.style.width='100%';vizElement.style.height='587px';
+        vizElement.style.width='100%';vizElement.style.height = (divElement.offsetWidth * 0.53) + "px"; 
       } else if (divElement.offsetWidth > 500) { 
-        vizElement.style.width='100%';vizElement.style.height='587px';
+        vizElement.style.width='100%';vizElement.style.height = (divElement.offsetWidth * 0.53) + "px"; 
       } else { 
-        vizElement.style.width='100%';vizElement.style.height='877px';
+        vizElement.style.width='100%';vizElement.style.height='807px';
       }                     
       var scriptElement = document.createElement('script');                    
       scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
       vizElement.parentNode.insertBefore(scriptElement, vizElement);
     </script>
+<a>Data Seksi Pendidikan Diniyah dan Pondok Pesantren Tahun 2024</a>
   </div>
 </div>
 
   </div>
 </main>
 
-  <footer>
-    &copy; 2025 Kementerian Agama Kota Yogyakarta • Hosting via GitHub Pages
-  </footer>
-</body>
+<footer>
+  <div class="footer-top">
+    <div class="footer-left">
+  
+      <div class="footer-info">
+        <h3>Kantor Kementerian Agama Kota Yogyakarta</h3>
+        <p>Jl. Ki Mangunsarkoro No. 43 A Kota Yogyakarta 55111</p>
+        <p>Telp: (0274) 512285  • Faksimili: (0274)520575</p>
+      </div>
+    </div>
+    <div class="footer-right">
+      <ul>
+        <li><a href="index.html">Pemeluk Agama</a></li>
+        <li><a href="dashboard2.html">Madrasah</a></li>
+        <li><a href="dashboard3.html">Pernikahan</a></li>
+        <li><a href="dashboard4.html">Pondok Pesantren</a></li>
+        <li><a href="dashboard5.html">TPQ</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2025 Kementerian Agama Kota Yogyakarta • Hosting via GitHub
+  </div>
+</footer>
 
+</body>
 </html>

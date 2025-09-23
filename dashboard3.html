@@ -274,8 +274,16 @@ footer {
       var divElement = document.getElementById('viz1755672134405');
       var vizElement = divElement.getElementsByTagName('object')[0];
       vizElement.style.width = "100%";  
-      vizElement.style.height = (divElement.offsetWidth * 0.65) + "px";  
+       
       // ✅ 0.48 karena ukuran asli Tableau ≈ 1020 x 487 (rasio tinggi ~48%)
+     if (window.innerWidth < 768) {
+  // untuk HP → tinggi lebih besar
+  vizElement.style.height = '600px';
+} else {
+  // untuk layar besar
+  vizElement.style.height = (divElement.offsetWidth * 0.65) + "px";
+}
+
       var scriptElement = document.createElement('script');
       scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
       vizElement.parentNode.insertBefore(scriptElement, vizElement);
@@ -315,5 +323,6 @@ footer {
 
 </body>
 </html>
+
 
 

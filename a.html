@@ -134,17 +134,22 @@ header {
 /* HAMBURGER */
 
 .hamburger {
-  display:none;
-  flex-direction:column;
-  cursor:pointer;
-  gap:6px;
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 6px;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 20000;   /* lebih tinggi dari nav-menu */
 }
 
 .hamburger span {
-  width:25px;
-  height:3px;
-  background:white;
-  border-radius:3px;
+  width: 28px;
+  height: 3px;
+  background: white;
+  border-radius: 3px;
+  transition: 0.3s ease;
 }
 
 /* ================= MAIN ================= */
@@ -193,78 +198,56 @@ footer {
 
 @media (max-width:768px){
 
-  header {
-    padding: 40px 20px;
-  }
-
-  .header-container {
-    flex-direction: row;
-  }
-
-  .hamburger { 
-    display:flex; 
-  }
+  .hamburger { display:flex; }
 
   .nav-menu {
-    position: fixed;           /* ubah dari absolute jadi fixed */
-    top: 0;
-    right: 0;
-    height: 100vh;             /* full tinggi layar */
-    width: 280px;
-    background: rgba(27,94,32,0.98);
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 90px 25px 30px 25px;
-    transform: translateX(100%);
-    transition: transform 0.3s ease;
-    overflow-y: auto;          /* INI YANG PENTING */
-    z-index: 9999;
+    position:absolute;
+    top:70px;
+    right:0;
+    background:rgba(27,94,32,0.98);
+    width:250px;
+    flex-direction:column;
+    align-items:flex-start;
+    padding:20px;
+    border-radius:12px 0 0 12px;
+    transform:translateX(100%);
+    transition:0.3s;
+    z-index: 15000;
   }
 
-  .nav-menu.active { 
-    transform: translateX(0); 
-  }
-
-  .nav-menu li {
-    width: 100%;
-    margin-bottom: 15px;
-  }
-
-  .nav-menu a {
-    width: 100%;
-    display: block;
-  }
-
-  /* Dropdown mobile */
+  .nav-menu.active { transform:translateX(0); }
 
   .dropdown-menu {
-    position: relative;
-    background: transparent;
-    box-shadow: none;
-    padding-left: 15px;
-    display: none;
+    position:relative;
+    top:0;
+    background:transparent;
+    box-shadow:none;
+    opacity:1;
+    visibility:visible;
+    transform:none;
+    padding-left:15px;
+    display:none;
   }
 
   .dropdown.open .dropdown-menu {
-    display: block;
+    display:block;
   }
 
   .dropdown.open .dropdown-icon {
-    transform: rotate(180deg);
+    transform:rotate(180deg);
   }
 
-  .dropdown-menu a {
-    color: #c8e6c9;
-    padding: 8px 0;
-  }
-
+  .dropdown-menu a { color:#c8e6c9; }
 }
-
 
 </style>
 </head>
 
 <body>
+
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
 
 <header>
 <div class="header-container">
@@ -278,9 +261,6 @@ footer {
   </div>
 
   <nav class="navbar">
-    <div class="hamburger" onclick="toggleMenu()">
-      <span></span><span></span><span></span>
-    </div>
 
 <ul class="nav-menu" id="navMenu">
        <li class="dropdown">
@@ -367,4 +347,3 @@ document.querySelectorAll(".dropdown > a").forEach(item=>{
 
 </body>
 </html>
-

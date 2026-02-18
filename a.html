@@ -347,7 +347,7 @@ function resizeTableau(){
   vizElement.style.height=
     window.innerWidth<768
     ? '650px'
-    : (divElement.offsetWidth*0.5)+'px';
+    : (divElement.offsetWidth*0.4)+'px';
 }
 resizeTableau();
 window.addEventListener('resize',resizeTableau);
@@ -388,3 +388,4 @@ document.querySelectorAll(".dropdown > a").forEach(item=>{
 
 </body>
 </html>
+

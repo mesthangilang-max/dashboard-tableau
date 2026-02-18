@@ -193,46 +193,73 @@ footer {
 
 @media (max-width:768px){
 
-  .hamburger { display:flex; }
-
-  .nav-menu {
-    position:absolute;
-    top:70px;
-    right:0;
-    background:rgba(27,94,32,0.98);
-    width:250px;
-    flex-direction:column;
-    align-items:flex-start;
-    padding:20px;
-    border-radius:12px 0 0 12px;
-    transform:translateX(100%);
-    transition:0.3s;
+  header {
+    padding: 40px 20px;
   }
 
-  .nav-menu.active { transform:translateX(0); }
+  .header-container {
+    flex-direction: row;
+  }
+
+  .hamburger { 
+    display:flex; 
+  }
+
+  .nav-menu {
+    position: fixed;           /* ubah dari absolute jadi fixed */
+    top: 0;
+    right: 0;
+    height: 100vh;             /* full tinggi layar */
+    width: 280px;
+    background: rgba(27,94,32,0.98);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 90px 25px 30px 25px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    overflow-y: auto;          /* INI YANG PENTING */
+    z-index: 9999;
+  }
+
+  .nav-menu.active { 
+    transform: translateX(0); 
+  }
+
+  .nav-menu li {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .nav-menu a {
+    width: 100%;
+    display: block;
+  }
+
+  /* Dropdown mobile */
 
   .dropdown-menu {
-    position:relative;
-    top:0;
-    background:transparent;
-    box-shadow:none;
-    opacity:1;
-    visibility:visible;
-    transform:none;
-    padding-left:15px;
-    display:none;
+    position: relative;
+    background: transparent;
+    box-shadow: none;
+    padding-left: 15px;
+    display: none;
   }
 
   .dropdown.open .dropdown-menu {
-    display:block;
+    display: block;
   }
 
   .dropdown.open .dropdown-icon {
-    transform:rotate(180deg);
+    transform: rotate(180deg);
   }
 
-  .dropdown-menu a { color:#c8e6c9; }
+  .dropdown-menu a {
+    color: #c8e6c9;
+    padding: 8px 0;
+  }
+
 }
+
 
 </style>
 </head>
@@ -340,3 +367,4 @@ document.querySelectorAll(".dropdown > a").forEach(item=>{
 
 </body>
 </html>
+
